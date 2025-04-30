@@ -10,7 +10,7 @@ A minimal Supabase backend to create and fetch personal notes.
 
 3.Crete a folder and run in terminal
 ```bash 
-git clone https://github.com/pallavik-pal/supabase.git
+git clone https://github.com/pallavik-pal/supabase-mini
 cd supabase
 ```
 3.Deploy edge functions:
@@ -80,7 +80,7 @@ curl -X POST "https://<project-url>.supabase.co/auth/v1/token?grant_type=passwor
 -H "apikey: <annon-key>" ^
 -d "{\"email\": \"<added-email>\", \"password\": \"<added-password>"}"
 ```
- 🔑 **This returns a Bearer token** – copy it to use in subsequent `POST` and `GET` requests.
+ 🔑 **This returns a Bearer token** – copy it to use in subsequent `POST` and `GET` Curl commands.
 
 ### ✅ Functional Example Command of My Project (Run in CMD)
 ```bash
