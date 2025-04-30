@@ -67,7 +67,7 @@ curl -X GET <paste-get_notes-url from the edge function>   -H "Authorization: Be
 #   }
 # ]
 ```
-##Manually add users 
+###Manually add users 
 -Authentication-->create user-->enter email and password -->click ok
 ```bash
 curl -X POST "https://<project-url>.supabase.co/auth/v1/token?grant_type=password" ^
@@ -75,14 +75,14 @@ curl -X POST "https://<project-url>.supabase.co/auth/v1/token?grant_type=passwor
 -H "apikey: <annon-key>" ^
 -d "{\"email\": \"<added-email>\", \"password\": \"<added-password>"}"
 ```
-*after running above you have a bearer token copy paste in get and post curl commmands 
+**after running above you have a bearer token copy paste in get and post curl commmands**
 
 ###functinal Example command of my project (run in cmd )
 ```bash
 curl -X POST "https://nnggglnvgjoqpaqqqtpp.supabase.co/functions/v1/post_notes" ^-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsImtpZCI6IkcrUjIwM2pQTkFzU3RvTHMiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL25uZ2dnbG52Z2pvcXBhcXFxdHBwLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiI4NTE2YmY0Zi0yMWZmLTQ0YTYtYjE4Mi1mYTVkOTlhNzc3N2IiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzQ2MDAyMDE4LCJpYXQiOjE3NDU5OTg0MTgsImVtYWlsIjoiY29udmVyc2VhaWxhYnNAZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbF92ZXJpZmllZCI6dHJ1ZX0sInJvbGUiOiJhdXRoZW50aWNhdGVkIiwiYWFsIjoiYWFsMSIsImFtciI6W3sibWV0aG9kIjoicGFzc3dvcmQiLCJ0aW1lc3RhbXAiOjE3NDU5OTg0MTh9XSwic2Vzc2lvbl9pZCI6ImE0MDA4OGIxLTUwMTItNDk5My1hZjMyLTJjOGMzMzllNDFlNSIsImlzX2Fub255bW91cyI6ZmFsc2V9.9NTmWO_4RnRE2S4bl73eM4YL6G3fE9qD_XB-ImfHmlc" ^-H "Content-Type: application/json" ^-d "{\"title\": \"Internship Application \", \"content\": \"HI I'm pallavi Accept me as an intern :) \"}"
 
 ```
-**response
+**response**
 [{"id":"2633f881-bf24-4f66-ac45-ba4085d68515",
 "user_id":"8516bf4f-21ff-44a6-b182-fa5d99a7777b",
 "title":"Internship Application ",
@@ -92,7 +92,7 @@ curl -X POST "https://nnggglnvgjoqpaqqqtpp.supabase.co/functions/v1/post_notes" 
 ```bash
 curl -X GET "https://nnggglnvgjoqpaqqqtpp.supabase.co/functions/v1/get_notes" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsImtpZCI6IkcrUjIwM2pQTkFzU3RvTHMiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL25uZ2dnbG52Z2pvcXBhcXFxdHBwLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiI4NTE2YmY0Zi0yMWZmLTQ0YTYtYjE4Mi1mYTVkOTlhNzc3N2IiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzQ2MDAyMDE4LCJpYXQiOjE3NDU5OTg0MTgsImVtYWlsIjoiY29udmVyc2VhaWxhYnNAZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbF92ZXJpZmllZCI6dHJ1ZX0sInJvbGUiOiJhdXRoZW50aWNhdGVkIiwiYWFsIjoiYWFsMSIsImFtciI6W3sibWV0aG9kIjoicGFzc3dvcmQiLCJ0aW1lc3RhbXAiOjE3NDU5OTg0MTh9XSwic2Vzc2lvbl9pZCI6ImE0MDA4OGIxLTUwMTItNDk5My1hZjMyLTJjOGMzMzllNDFlNSIsImlzX2Fub255bW91cyI6ZmFsc2V9.9NTmWO_4RnRE2S4bl73eM4YL6G3fE9qD_XB-ImfHmlc" -H "Content-Type: application/json"
 ```
-**response
+**response**
 [{"id":"2633f881-bf24-4f66-ac45-ba4085d68515",
 "user_id":"8516bf4f-21ff-44a6-b182-fa5d99a7777b",
 "title":"Internship Application ",
