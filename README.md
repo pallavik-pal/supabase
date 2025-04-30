@@ -10,7 +10,7 @@ A minimal Supabase backend to create and fetch personal notes.
 
 3.Crete a folder and run in terminal
 ```bash 
-git clone https://github.com/pallavik-pal/supabase-mini
+git clone https://github.com/pallavik-pal/supabase-mini.git
 cd supabase
 ```
 3.Deploy edge functions:
