@@ -22,40 +22,28 @@ cd supabase
 
  5. Set your project’s `SUPABASE_URL` and `SUPABASE_ANON_KEY` in the .env file inside the supabase folder
 
-    ## 📐 Schema Design
-    ## 📌 Columns
+   ## 📐 Schema Design
 
-| Column      | Purpose                                                                 |
-|-------------|-------------------------------------------------------------------------|
-| `id`        | A unique identifier for each note                                       |
-| `user_id`   | Links the note to the specific user who created it                      |
-| `title`     | A short title or heading for the note                                   |
-| `content`   | The actual text/content of the note                                     |
-| `created_at`| Records the exact time the note was created, useful for time-based sorting |
+### 📌 Columns & Purpose
 
-## 🧾 Data Types Used and Their Purpose
+- `id`: A unique identifier for each note.
+- `user_id`: Links the note to the user who created it.
+- `title`: A short title or heading for the note.
+- `content`: The main text or body of the note.
+- `created_at`: Records when the note was created.
 
-| Data Type                | Purpose                                                                 |
-|--------------------------|-------------------------------------------------------------------------|
-| `uuid`                   | Ensures uniqueness across records (used for `id` and `user_id`)         |
-| `text`                   | Stores flexible-length textual data (used for `title` and `content`)    |
-| `timestamp with time zone` | Records exact date and time including time zone (used for `created_at`) |
+### 🧾 Data Types
 
-## 🔐 Primary Key
+- `uuid`: Used for `id` and `user_id` to ensure each record is uniquely identifiable.
+- `text`: Used for `title` and `content` to store flexible-length textual information.
+- `timestamp with time zone`: Used for `created_at` to accurately record date and time with zone info.
 
-- `id` is set as the **primary key** to uniquely identify each note.
+### 🔐 Constraints & Defaults
 
-## 📏 Constraints
+- `id` is the **primary key** and uses `gen_random_uuid()` to auto-generate unique values.
+- `title` is marked **NOT NULL** to ensure no note is created without a title.
+- `created_at` defaults to `now()` to automatically capture the timestamp when a note is created.
 
-- `title` is marked as **NOT NULL** to ensure no note is saved without a title.
-- Other constraints (like linking `user_id` to a valid user) can be enforced via foreign keys
-
-## ⚙️ Default Values
-
-| Column      | Default              | Reason                                                                 |
-|-------------|----------------------|------------------------------------------------------------------------|
-| `id`        | `gen_random_uuid()`  | Automatically generates a unique ID when a new note is created        |
-| `created_at`| `now()`              | Captures the exact moment the note is created without manual input    |
 
 ## ✨ API Endpoints
 
@@ -63,31 +51,12 @@ cd supabase
 - **Why**: We use POST to create new resources.
 ```bash
 curl -X POST <paste-post_notes_url-from the edge function>    -H "Authorization: Bearer <your-token>"   -H "Content-Type: application/json"   -d '{"title": "Shopping List", "content": "Milk, Bread, Eggs"}'
-
-# Expected response:
-# {
-#   "id": "...",
-#   "user_id": "...",
-#   "title": "Shopping List",
-#   "content": "Milk, Bread, Eggs",
-#   "created_at": "..."
-# }
 ```
 
 ### GET /notes
 - **Why**: We use GET to fetch the user's notes.
 ```bash
 curl -X GET <paste-get_notes-url from the edge function>   -H "Authorization: Bearer <your-token>"
-
-# Expected response:
-# [
-#   {
-#     "id": "...",
-#     "title": "Shopping List",
-#     "content": "Milk, Bread, Eggs",
-#     "created_at": "..."
-#   }
-# ]
 ```
 # Supabase Manual User Creation 
 **Supabase Dashboard → Authentication → Users → Add User**  
