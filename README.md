@@ -17,14 +17,15 @@ A minimal Supabase backend to create and fetch personal notes.
 ## ⚙️ Setup & Deploy Steps
 1. Create a new Supabase project in the website https://supabase.com
 2. Add/copy `schema.sql` in SQL editor at left menu in the project dashboard and click run. Notes table will be created.
-   
+
 3.Deploy edge functions:
    ```bash
    supabase functions deploy post_notes
    supabase functions deploy get_notes
    ```
-4.In edge function(left menu) you find the url of post and get after deployment 
-5. Set your project’s `SUPABASE_URL` and `SUPABASE_ANON_KEY` in the .env file inside the supabase folder
+ 4.In edge function(left menu) you find the url of post and get after deployment 
+
+ 5. Set your project’s `SUPABASE_URL` and `SUPABASE_ANON_KEY` in the .env file inside the supabase folder
 
 ## ✨ API Endpoints
 
