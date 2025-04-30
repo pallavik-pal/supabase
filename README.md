@@ -8,6 +8,11 @@ A minimal Supabase backend to create and fetch personal notes.
    
 2. Add/copy `schema.sql` in SQL editor at left menu in the project dashboard and click run. Notes table will be created.
 
+3.Crete a folder and run in terminal
+```bash 
+git clone https://github.com/pallavik-pal/supabase.git
+cd supabase
+```
 3.Deploy edge functions:
    ```bash
    supabase functions deploy post_notes
