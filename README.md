@@ -104,7 +104,7 @@ curl -X POST "https://<project-url>.supabase.co/auth/v1/token?grant_type=passwor
 ```
  🔑 **This returns a Bearer token** – copy it to use in subsequent `POST` and `GET` Curl commands.
 
-### ✅ Functional Example Command of My Project (Run in CMD)
+# ✅ Functional Example Command of My Project (Run in CMD)
 ```bash
 curl -X POST "https://nnggglnvgjoqpaqqqtpp.supabase.co/functions/v1/post_notes" ^-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsImtpZCI6IkcrUjIwM2pQTkFzU3RvTHMiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL25uZ2dnbG52Z2pvcXBhcXFxdHBwLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiI4NTE2YmY0Zi0yMWZmLTQ0YTYtYjE4Mi1mYTVkOTlhNzc3N2IiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzQ2MDAyMDE4LCJpYXQiOjE3NDU5OTg0MTgsImVtYWlsIjoiY29udmVyc2VhaWxhYnNAZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbF92ZXJpZmllZCI6dHJ1ZX0sInJvbGUiOiJhdXRoZW50aWNhdGVkIiwiYWFsIjoiYWFsMSIsImFtciI6W3sibWV0aG9kIjoicGFzc3dvcmQiLCJ0aW1lc3RhbXAiOjE3NDU5OTg0MTh9XSwic2Vzc2lvbl9pZCI6ImE0MDA4OGIxLTUwMTItNDk5My1hZjMyLTJjOGMzMzllNDFlNSIsImlzX2Fub255bW91cyI6ZmFsc2V9.9NTmWO_4RnRE2S4bl73eM4YL6G3fE9qD_XB-ImfHmlc" ^-H "Content-Type: application/json" ^-d "{\"title\": \"Internship Application \", \"content\": \"HI I'm pallavi Accept me as an intern :) \"}"
 
