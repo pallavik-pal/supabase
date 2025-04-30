@@ -23,17 +23,39 @@ cd supabase
  5. Set your project’s `SUPABASE_URL` and `SUPABASE_ANON_KEY` in the .env file inside the supabase folder
 
     ## 📐 Schema Design
--`columns`- `id` to create a specific id for each note , `user_id` to link notes to a specific user , `title` to create a title for each note, `content` to write content of the note , `created_at` to know the time note is created later helps to sort notes based on time .
+    ## 📌 Columns
 
--`types`-`uuid`-universal unique identifier to make each note unique ,`text` text data type is used, `timestamp with time zone`- to store time and date along with zone info
+| Column      | Purpose                                                                 |
+|-------------|-------------------------------------------------------------------------|
+| `id`        | A unique identifier for each note                                       |
+| `user_id`   | Links the note to the specific user who created it                      |
+| `title`     | A short title or heading for the note                                   |
+| `content`   | The actual text/content of the note                                     |
+| `created_at`| Records the exact time the note was created, useful for time-based sorting |
 
--`primary key`-for uniqueness in id 
+## 🧾 Data Types Used and Their Purpose
 
--`constraint`- like a rule that it should not be null title should never be empty 
+| Data Type                | Purpose                                                                 |
+|--------------------------|-------------------------------------------------------------------------|
+| `uuid`                   | Ensures uniqueness across records (used for `id` and `user_id`)         |
+| `text`                   | Stores flexible-length textual data (used for `title` and `content`)    |
+| `timestamp with time zone` | Records exact date and time including time zone (used for `created_at`) |
 
--`default`-`gen_random_uuid()`- generates a random id no need to specify ,`default now` -to collect data of that particular moment 
+## 🔐 Primary Key
 
+- `id` is set as the **primary key** to uniquely identify each note.
 
+## 📏 Constraints
+
+- `title` is marked as **NOT NULL** to ensure no note is saved without a title.
+- Other constraints (like linking `user_id` to a valid user) can be enforced via foreign keys
+
+## ⚙️ Default Values
+
+| Column      | Default              | Reason                                                                 |
+|-------------|----------------------|------------------------------------------------------------------------|
+| `id`        | `gen_random_uuid()`  | Automatically generates a unique ID when a new note is created        |
+| `created_at`| `now()`              | Captures the exact moment the note is created without manual input    |
 
 ## ✨ API Endpoints
 
