@@ -1,4 +1,6 @@
-//  GET is used to retrieve resources; '/notes' lists all notes for the user; user ID is taken from the auth context.
+//GET is used to retrieve existing resources (notes), 
+// the URL path '/notes' logically represents the action of retrieving a list of notes, 
+// and parameters (authorization) are read from request headers.
 
 import { serve } from "https://deno.land/std@0.177.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";

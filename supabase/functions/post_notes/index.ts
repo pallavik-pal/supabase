@@ -1,3 +1,7 @@
+//POST is used to create a new resource (note), 
+// the URL path '/notes' logically represents the action of creating a note, 
+// and parameters are read from the request body.//
+
 import { serve } from "https://deno.land/std@0.177.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
